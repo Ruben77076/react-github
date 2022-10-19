@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {Routes,Route} from 'react-router-dom';
+import React from 'react';
+
+//Funx
+import Home from './components/Home';
+import Friends from './components/Friends';
+import DaNav from './components/DaNav';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          We in dis piece!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <>
+      <DaNav />
+      <div className="container">
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/home' element={<Home />}></Route>
+        <Route path='/migos' element={<Friends />}></Route>
+      </Routes>
+      </div>
+      </>
+    </React.Fragment>
   );
 }
 
